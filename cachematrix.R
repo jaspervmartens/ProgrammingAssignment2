@@ -9,6 +9,7 @@ makeCacheMatrix <- function(x = matrix()) {
   
   set <- function(y) {
     x <<- y
+    i <<- NULL
   }
   
   get <- function() {x}
@@ -31,7 +32,7 @@ cacheSolve <- function(x, ...) {
   
   if(!is.null(i)) {
     message("Getting cached data")
-    return(m)
+    return(i)
   }
   
   i <- solve(x$get(), ...)
